@@ -1,0 +1,7 @@
+pages\InventoryPage.class
+pages\LoginPage.class
+pages\CartPage.class
+tests\ProductSortTest.class
+tests\BaseTest.class
+tests\CartAndCheckoutTest.class
+tests\LoginTest.class
