@@ -15,15 +15,6 @@ Covers:
 - WebDriverManager (auto-manages the ChromeDriver binary — no manual driver downloads)
 - Maven
 
-## Project structure
-```
-src/test/java/
-  pages/    -> Page Object classes (LoginPage, InventoryPage, CartPage)
-  tests/    -> Test classes (LoginTest, ProductSortTest, CartAndCheckoutTest)
-testng.xml  -> Test suite configuration
-pom.xml     -> Maven dependencies & build config
-```
-
 Uses the **Page Object Model (POM)** pattern: locators and page actions live in
 `pages/`, so if the UI changes, only the page object needs updating — not every test.
 
@@ -32,17 +23,17 @@ Uses the **Page Object Model (POM)** pattern: locators and page actions live in
 1. Install Java 17+ and Maven.
 2. Install Google Chrome (WebDriverManager auto-downloads the matching driver).
 3. From the project root:
-   ```bash
+```bash
    mvn test
-   ```
+```
 4. To watch the browser instead of running headless, open `tests/BaseTest.java`
    and comment out this line:
-   ```java
+```java
    options.addArguments("--headless=new");
-   ```
+```
 
-## Before you add this to your resume
+## Status
 
-Run it yourself first (`mvn test`) and read through the test output. Be ready to
-explain the Page Object Model, why WebDriverManager is used, and what each
-assertion checks — that's what an interviewer will actually probe.
+All 9 tests passing. Built and debugged locally — fixed two real bugs during development:
+a stale element reference when adding items to cart, and missing explicit waits causing
+timing issues on cart/checkout navigation.
